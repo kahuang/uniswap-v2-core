@@ -47,13 +47,12 @@ module.exports = {
      port: 8545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
-    xdai: {
+    conduit: {
       provider: function() {
         return new HDWalletProvider(
-          ["xDAI Account Private Key"],
-          "https://dai.poa.network")
+          [process.env.CONDUIT_DEV_PRIVATE_KEY],process.env.CONDUIT_RPC_URL)
       },
-      network_id: 100,
+      network_id: "*",
       gas: 10000000,
       gasPrice: 1000000000
     },
